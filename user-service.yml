@@ -1,4 +1,6 @@
 spring:
+  huy:
+    hi: "HI"
   # Enable ANSI colors in console output
   output:
     ansi:
