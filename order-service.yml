@@ -64,7 +64,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics,hikaricp
+        include: health,metrics,hikaricp,refresh
 
 # OpenAPI/Swagger Configuration for development
 springdoc:
