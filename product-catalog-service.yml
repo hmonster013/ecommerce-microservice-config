@@ -109,7 +109,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics,hikaricp,refresh
+        include: health,metrics,refresh
 
 logging:
   level:
