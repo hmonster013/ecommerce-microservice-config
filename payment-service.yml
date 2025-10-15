@@ -63,7 +63,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,metrics,hikaricp
 
 # JWT Configuration
 jwt:
