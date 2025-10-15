@@ -58,7 +58,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,metrics,hikaricp
 
 # Authentication and CORS handled by API Gateway
 # No JWT or CORS configuration needed in microservices
