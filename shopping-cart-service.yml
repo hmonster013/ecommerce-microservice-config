@@ -58,15 +58,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,env,configprops
-      base-path: /actuator
-  endpoint:
-    health:
-      show-details: always
-      show-components: always
-  info:
-    env:
-      enabled: true
+        include: "*"
 
 # Authentication and CORS handled by API Gateway
 # No JWT or CORS configuration needed in microservices
