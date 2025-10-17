@@ -57,8 +57,6 @@ spring:
         order_inserts: true
         order_updates: true
         batch_versioned_data: true
-        connection:
-          provider_disables_autocommit: true
         query:
           plan_cache_max_size: 2048
           in_clause_parameter_padding: true
