@@ -138,4 +138,4 @@ app:
   # Security handled by API Gateway
   # No JWT or CORS configuration needed in microservices
 test:
-  message: "Toi yeu Viet Nam"
+  message: "Toi la Huy"
