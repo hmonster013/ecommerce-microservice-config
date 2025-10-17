@@ -108,7 +108,8 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics,refresh
+        # include: health,metrics,refresh
+        include: health,refresh
 
 logging:
   level:
