@@ -9,7 +9,13 @@ spring:
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
-  
+    
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:user}
+    password: ${RABBITMQ_PASSWORD:password}
+    
   jpa:
     hibernate:
       ddl-auto: update
@@ -46,14 +52,7 @@ spring:
         debug: false
     # Test connection on startup
     test-connection: false
-
-# RabbitMQ and Redis disabled for simple notification service
-  # rabbitmq:
-  #   host: ${RABBITMQ_HOST:localhost}
-  # data:
-  #   redis:
-  #     host: ${REDIS_HOST:localhost}
-
+    
 eureka:
   client:
     service-url:
