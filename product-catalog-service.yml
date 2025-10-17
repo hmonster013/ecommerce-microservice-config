@@ -137,3 +137,5 @@ app:
       allowed-types: jpg,jpeg,png,webp
   # Security handled by API Gateway
   # No JWT or CORS configuration needed in microservices
+test:
+  message: "Xin chao Viet Nam"
