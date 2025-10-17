@@ -62,7 +62,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics,refresh,busrefresh
+        include: health,metrics
 
 # Authentication and CORS handled by API Gateway
 # No JWT or CORS configuration needed in microservices
