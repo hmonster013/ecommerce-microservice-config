@@ -78,6 +78,12 @@ management:
     env:
       enabled: true
 
+info:
+  app:
+    name: Order Service
+    description: Order processing and management service
+    version: 1.0.0
+
 # OpenAPI/Swagger Configuration for development
 springdoc:
   api-docs:

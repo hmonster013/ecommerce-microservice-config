@@ -75,6 +75,12 @@ management:
     env:
       enabled: true
 
+info:
+  app:
+    name: Notification Service
+    description: Email and SMS notification service
+    version: 1.0.0
+
 # Swagger/OpenAPI Configuration
 springdoc:
   api-docs:

@@ -85,6 +85,12 @@ management:
     env:
       enabled: true
 
+info:
+  app:
+    name: User Service
+    description: User authentication and management service
+    version: 1.0.0
+
 # JWT Configuration
 jwt:
   secret: ${JWT_SECRET:CHANGE_THIS_IN_PRODUCTION_MUST_BE_AT_LEAST_256_BITS_LONG_FOR_HS256_ALGORITHM}

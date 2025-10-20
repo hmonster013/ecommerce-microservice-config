@@ -70,6 +70,12 @@ management:
     env:
       enabled: true
 
+info:
+  app:
+    name: Shopping Cart Service
+    description: Shopping cart and cart items management service
+    version: 1.0.0
+
 # Authentication and CORS handled by API Gateway
 # No JWT or CORS configuration needed in microservices
 

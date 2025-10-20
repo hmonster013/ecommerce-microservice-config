@@ -122,6 +122,12 @@ management:
     env:
       enabled: true
 
+info:
+  app:
+    name: Product Catalog Service
+    description: Product and category management service
+    version: 1.0.0
+
 logging:
   level:
     org.de013.productcatalog: ${LOG_LEVEL_APP:DEBUG}
