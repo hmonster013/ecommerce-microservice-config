@@ -70,7 +70,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics
+        include: health,metrics,info,shutdown
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
 
 # OpenAPI/Swagger Configuration for development
 springdoc:
