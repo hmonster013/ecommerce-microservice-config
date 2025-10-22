@@ -84,6 +84,12 @@ spring:
           filters:
             - RewritePath=/api/notification-service/v3/api-docs, /v3/api-docs
 
+info:
+  app:
+    name: API Gateway
+    description: E-commerce Gateway Server Application
+    version: 1.0.0
+
 # Token blacklist configuration
 token:
   blacklist:
@@ -125,11 +131,9 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,gateway,env,configprops
+        include: health,info,metrics,gateway,routes
       base-path: /actuator
   endpoint:
-    health:
-      show-details: always
     gateway:
       enabled: true
   info:
