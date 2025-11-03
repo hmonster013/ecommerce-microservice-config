@@ -30,59 +30,20 @@ spring:
     gateway:
       discovery:
         locator:
-          # Enable automatic route creation from Eureka discovery
-          enabled: true
-          lower-case-service-id: true
-          predicates:
-            - name: Path
-              args:
-                pattern: "'/api/'+serviceId+'/**'"
-          filters:
-            # Remove /api/{service-id}/ prefix when forwarding to services
-            - name: RewritePath
-              args:
-                regexp: "'/api/(?<service>[^/]+)/(?<remaining>.*)'"
-                replacement: "'/${remaining}'"
+          # Disabled - using RouteLocator bean in GatewayRoutesConfig instead
+          enabled: false
       forwarded:
         enabled: false
-      routes:
-        # Special routes for API documentation endpoints (these need exact matching)
-        - id: user-service-docs
-          uri: lb://user-service
-          predicates:
-            - Path=/api/user-service/v3/api-docs
-          filters:
-            - RewritePath=/api/user-service/v3/api-docs, /v3/api-docs
-        - id: product-catalog-service-docs
-          uri: lb://product-catalog-service
-          predicates:
-            - Path=/api/product-catalog-service/v3/api-docs
-          filters:
-            - RewritePath=/api/product-catalog-service/v3/api-docs, /v3/api-docs
-        - id: shopping-cart-service-docs
-          uri: lb://shopping-cart-service
-          predicates:
-            - Path=/api/shopping-cart-service/v3/api-docs
-          filters:
-            - RewritePath=/api/shopping-cart-service/v3/api-docs, /v3/api-docs
-        - id: order-service-docs
-          uri: lb://order-service
-          predicates:
-            - Path=/api/order-service/v3/api-docs
-          filters:
-            - RewritePath=/api/order-service/v3/api-docs, /v3/api-docs
-        - id: payment-service-docs
-          uri: lb://payment-service
-          predicates:
-            - Path=/api/payment-service/v3/api-docs
-          filters:
-            - RewritePath=/api/payment-service/v3/api-docs, /v3/api-docs
-        - id: notification-service-docs
-          uri: lb://notification-service
-          predicates:
-            - Path=/api/notification-service/v3/api-docs
-          filters:
-            - RewritePath=/api/notification-service/v3/api-docs, /v3/api-docs
+
+# Resilience4j Circuit Breaker Configuration
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 5s
+        failureRateThreshold: 50
 
 info:
   app:
@@ -131,7 +92,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,gateway,routes
+        include: health,info,metrics,gateway
       base-path: /actuator
   endpoint:
     gateway:
