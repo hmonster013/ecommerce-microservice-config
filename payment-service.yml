@@ -65,15 +65,6 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-  info:
-    env:
-      enabled: true
-
 info:
   app:
     name: Payment Service

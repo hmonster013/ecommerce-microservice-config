@@ -65,16 +65,6 @@ eureka:
     lease-expiration-duration-in-seconds: 30
     hostname: localhost
 
-# Management endpoints for development
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-  info:
-    env:
-      enabled: true
-
 info:
   app:
     name: Order Service

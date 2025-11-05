@@ -110,15 +110,6 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     lease-expiration-duration-in-seconds: 90
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-  info:
-    env:
-      enabled: true
-
 info:
   app:
     name: Product Catalog Service
