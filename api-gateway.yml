@@ -87,20 +87,6 @@ eureka:
     lease-expiration-duration-in-seconds: 30  # Faster eviction for development
     hostname: localhost
 
-# Management endpoints for development monitoring
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,gateway
-      base-path: /actuator
-  endpoint:
-    gateway:
-      enabled: true
-  info:
-    env:
-      enabled: true
-
 # Swagger/OpenAPI Configuration
 springdoc:
   api-docs:
