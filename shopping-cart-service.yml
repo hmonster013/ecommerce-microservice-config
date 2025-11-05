@@ -30,9 +30,9 @@ spring:
   # Redis Configuration
   data:
     redis:
-      host: ${REDIS_HOST:localhost}
-      port: ${REDIS_PORT:6379}
-      database: ${SPRING_DATA_REDIS_DATABASE:0}
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      database: ${SPRING_DATA_REDIS_DATABASE}
       timeout: 2000
       lettuce:
         pool:
