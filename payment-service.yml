@@ -1,3 +1,14 @@
+# Server Configuration
+server:
+  tomcat:
+    connection-timeout: 30s
+    keep-alive-timeout: 30s
+    threads:
+      max: 200
+      min-spare: 10
+    max-connections: 10000
+    accept-count: 100
+
 spring:
   # Jackson configuration for proper date/time serialization
   jackson:
