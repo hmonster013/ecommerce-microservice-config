@@ -42,6 +42,12 @@ spring:
           enabled: false
       forwarded:
         enabled: false
+      httpclient:
+        connect-timeout: 5000  # 5 seconds
+        response-timeout: 30s   # 30 seconds (for Swagger first-time generation)
+        pool:
+          max-connections: 500
+          max-idle-time: 30s
 
 # Resilience4j Circuit Breaker Configuration
 resilience4j:
@@ -52,6 +58,12 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 3
         waitDurationInOpenState: 5s
         failureRateThreshold: 50
+        slowCallRateThreshold: 100
+        slowCallDurationThreshold: 30s  # Allow 30s for slow calls (Swagger generation)
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 30s  # 30 seconds timeout for all services
 
 info:
   app:
