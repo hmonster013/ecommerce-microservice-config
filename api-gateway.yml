@@ -4,6 +4,14 @@ spring:
     ansi:
       enabled: always
 
+  # OAuth2 Resource Server Configuration (Keycloak)
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8090/realms/ecommerce-realm}
+          jwk-set-uri: ${KEYCLOAK_JWK_SET_URI:http://localhost:8090/realms/ecommerce-realm/protocol/openid-connect/certs}
+
   # Redis Configuration for token blacklist
   data:
     redis:
@@ -118,3 +126,12 @@ springdoc:
 jwt:
   secret: ${JWT_SECRET:CHANGE_THIS_IN_PRODUCTION_MUST_BE_AT_LEAST_256_BITS_LONG_FOR_HS256_ALGORITHM}
   issuer: ${JWT_ISSUER:ecommerce-platform}
+
+# Keycloak Configuration
+keycloak:
+  server-url: ${KEYCLOAK_SERVER_URL:http://localhost:8090}
+  realm: ${KEYCLOAK_REALM:ecommerce-realm}
+  client-id: ${KEYCLOAK_CLIENT_ID:api-gateway}
+  client-secret: ${KEYCLOAK_CLIENT_SECRET:api-gateway-secret-change-in-production}
+  admin-username: ${KC_BOOTSTRAP_ADMIN_USERNAME:admin}
+  admin-password: ${KC_BOOTSTRAP_ADMIN_PASSWORD:admin}

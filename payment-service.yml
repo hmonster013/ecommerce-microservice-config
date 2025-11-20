@@ -157,4 +157,12 @@ feign:
     response:
       enabled: true
 
+# User Sync Configuration
+user-sync:
+  enabled: true
+  cache-ttl: 3600  # seconds (1 hour)
+  retry:
+    max-attempts: 3
+    backoff-period: 1000  # milliseconds
+
 
