@@ -88,11 +88,7 @@ info:
     description: Payment processing and transaction management service
     version: 1.0.0
 
-# JWT Configuration
-jwt:
-  secret: ${JWT_SECRET:CHANGE_THIS_IN_PRODUCTION_MUST_BE_AT_LEAST_256_BITS_LONG_FOR_HS256_ALGORITHM}
-  expiration: ${JWT_EXPIRATION:900000}  # 15 minutes
-  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}  # 7 days
+# JWT Configuration removed - now using Keycloak for authentication
   issuer: ${JWT_ISSUER:ecommerce-platform}
   algorithm: ${JWT_ALGORITHM:HS256}
 

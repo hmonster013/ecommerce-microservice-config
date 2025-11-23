@@ -134,11 +134,6 @@ springdoc:
       - url: /api/notification-service/v3/api-docs
         name: Notification Service
 
-# JWT Configuration for development (must match user-service configuration)
-jwt:
-  secret: ${JWT_SECRET:CHANGE_THIS_IN_PRODUCTION_MUST_BE_AT_LEAST_256_BITS_LONG_FOR_HS256_ALGORITHM}
-  issuer: ${JWT_ISSUER:ecommerce-platform}
-
 # Keycloak Configuration
 keycloak:
   server-url: ${KEYCLOAK_SERVER_URL:http://localhost:8090}
